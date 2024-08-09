@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover Change</title>
+</head>
+<body>
+    <img id="img" src="https://www.shutterstock.com/image-vector/cartoon-toy-shop-furniture-goods-260nw-2316495111.jpg" width="500",height="500px" alt="Image">
+    <script>
+        let img = document.getElementById('img');
+        img.addEventListener('mouseover', () => {
+            img.src = "https://www.shutterstock.com/image-vector/kid-toy-store-interior-cartoon-260nw-2323543563.jpg";
+        });
+        img.addEventListener('mouseout', () => {
+            img.src = "https://www.shutterstock.com/image-vector/cartoon-toy-shop-furniture-goods-260nw-2316495111.jpg";
+        });
+    </script>
+</body>
+</html>

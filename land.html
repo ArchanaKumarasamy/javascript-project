@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-attachment: fixed;
+        }
+        .uu {
+            /* background-color: #439093; */
+            height: 100px;
+            padding: 7px;
+            text-align: right;
+            box-sizing: center;
+            /* max-width: 1060px;
+            margin-left: 100px;
+            line-height: -10px;
+            border-radius: 10px; */
+        }
+        ul li {
+            display: inline-block;
+            margin-top: 0px;
+            margin-right: 5px;
+            background-color:violet;
+
+        }
+        h1{
+           text-align: center;
+        }
+
+        #bg-img {
+            transition-duration: 1s;
+            background-image: url("https://t3.ftcdn.net/jpg/08/15/93/64/360_F_815936495_ZRwqFbpAK6hynGEKAsRy2x1vgFnEP8v4.jpg");
+            height: 100vh;
+            background-size: 100% 100vh;
+        }
+
+        #prev {
+            transform: rotate(180deg);
+            height: 50px;
+        }
+
+        #next {
+            height: 50px;
+        }
+
+        .aaa {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .img {
+            opacity: 0.5;
+
+        }
+
+        .display {
+            opacity: 1;
+            border: 2px solid white;
+        }
+
+        .column1 {
+            float: left;
+            width: 180px;
+            text-align: center;
+            color: black;
+            display: block;
+            background-color: transparent;
+            border: 1px solid transparent;
+
+            margin-right: 10px;
+            margin-bottom: 1px;
+            padding: 10px;
+            font-size: 20px;
+            transform: translateX(120px);
+
+
+        }
+
+        .xyz {
+            text-align: center;
+            background-color: transparent;
+            padding: 70px;
+            border-radius: 10px;
+
+            box-sizing: center;
+            max-width: 100%;
+            height: 200px;
+            margin: 50px;
+            transform: translateX(120px);
+        }
+
+
+        .column2:hover {
+
+            transform: scale(1.3);
+
+        }
+
+        /* .button1 {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #558C89;
+            border: 2px solid white;
+            box-shadow: 0 0 15px black;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+
+        } */
+        /* header {
+            background: linear-gradient(purple,white,purple);
+            color: black;
+            padding: 10px;
+            text-align: center;
+        } */
+
+        /* #text {
+            color: white;
+            font-size: 150px;
+        } */
+        /* body {
+            background: linear-gradient(purple, white, purple);
+        } */
+
+        #txt {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 0px;
+        }
+
+        .box {
+            margin: 10px;
+            text-align: center;
+            width: 260px;
+            height: 430px;
+            box-shadow: 0 0 50px purple;
+            border-radius: 10PX;
+        }
+
+        .box img {
+            border: 2px solid white;
+            padding: 1px;
+            width: 250px;
+            border-radius: 10PX;
+        }
+
+        .box img:hover {
+            transform: scale(1.15);
+        }
+
+        .box p {
+            margin: 2px 0;
+
+        }
+
+        .box p:hover {
+
+            background: linear-gradient(rgb(204, 122, 136), rgb(0, 183, 255));
+        }
+
+        header{
+            background: linear-gradient(purple, white, purple);
+            color: black;
+            padding: 10px;
+            text-align: center;
+            height: 150px;
+        }
+        footer {
+            background: linear-gradient(purple, white, purple);
+            color: black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        button {
+            background: linear-gradient(grey, white, grey);
+            padding: 10px;
+        }
+
+        button:hover {
+            transform: scale(1.15);
+            background: linear-gradient(rgb(0, 183, 255), white, purple);
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+
+
+            <ul class="uu" id="uu">
+
+                <img src="https://r2.erweima.ai/imgcompressed/compressed_3a289aa2e93831685434e802250af841.webp" height="100px" width="100px"
+                    style="float: left;padding: 20px; border-radius: 50%;">
+                <h1>"A TOY A DAY,KEEP SADNESS AWAY.”</h1>
+                <button onclick="myFunction()">Toggle dark mode</button>
+                <li><a href="#uu">HOME</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a href="about.html">ABOUT US</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a href="contact.html">CONTACT</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- <li><a href="#bb1">REVIEWS</a></li> -->
+
+            </ul>
+
+
+        </div>
+
+        
+        
+
+    </header>
+    <div id="bg-img">
+        <img id="prev" onclick="prev()" src="./asserts/a1.png" alt="aa">
+        <img id="next" onclick="next()" src="./asserts/a1.png" alt="bb">
+        <p id="text">A TOY A DAY,KEEP SADNESS AWAY!!!</p>
+
+        <div class="aaa">
+            <img class="img display" height="100px"
+                src="https://t3.ftcdn.net/jpg/08/15/93/64/360_F_815936495_ZRwqFbpAK6hynGEKAsRy2x1vgFnEP8v4.jpg" alt="">
+            <img class="img" height="100px"
+                src="https://img.freepik.com/free-vector/toy-store-cartoon-landing-page-shop-showcase_107791-14657.jpg"
+                alt="">
+            <img class="img" height="100px"
+                src="https://img.freepik.com/free-vector/toys-shop-white-background_1308-17615.jpg?size=626&ext=jpg&ga=GA1.1.44546679.1716681600&semt=ais_user"
+                alt="">
+            <img class="img" height="100px"
+                src="https://media.istockphoto.com/id/1327513606/vector/robot-cars-pyramid-helicopter-rocket-blocks-in-boy-toy-store-window-colourful-storefront.jpg?s=612x612&w=0&k=20&c=IzxRqyo0S7oBSNT3vOfZrmNoFqs04CXOFSGth1H1UJs="
+                alt="">
+
+        </div>
+    </div>
+    <div class="xyz">
+        <div class="column1">
+            <img class="column2"
+                src="https://m.media-amazon.com/images/G/31/img24/Media/STL/toys/Shop-by-age_01._CB561265601_.jpg"
+                alt="nature"
+                style="width: 100%; height: 200px; margin-top: -90px; border-radius: 10px;border: 2px solid white;box-shadow: 0 0 15px rgb(2, 49, 45);">
+            <p>Toys for infant</p>
+            <!-- <a href="#" class="button1" ;>See More</a> -->
+
+        </div>
+        <div class="column1">
+
+            <img class="column2"
+                src="https://m.media-amazon.com/images/G/31/img24/Media/STL/toys/Shop-by-age_02._CB561265601_.jpg"
+                alt="keyboard"
+                style="width: 100%; height: 200px; margin-top: -90px;border-radius: 10px; border: 2px solid white;box-shadow: 0 0 15px rgb(2, 49, 45);">
+            <p>Toys for Pre-Schoolers</p>
+            <!-- <a href="#" class="button1" ;>See More</a> -->
+        </div>
+        <div class="column1">
+            <img class="column2"
+                src="https://m.media-amazon.com/images/G/31/img24/Media/STL/toys/Shop-by-age_03._CB561265601_.jpg"
+                alt="keyboard"
+                style="width: 100%; height: 200px; margin-top: -90px;border-radius: 10px;border: 2px solid white;box-shadow: 0 0 15px rgb(2, 49, 45);">
+            <p>Toys for School Kids</p>
+            <!-- <a href="#" class="button1" ;>See More</a> -->
+        </div>
+        <div class="column1">
+            <img class="column2"
+                src="https://m.media-amazon.com/images/G/31/img24/Media/STL/toys/Shop-by-age_05._CB561265601_.jpg"
+                alt="keyboard"
+                style="width: 100%; height: 200px; margin-top: -90px;border-radius: 10px;border: 2px solid white;box-shadow: 0 0 15px rgb(2, 49, 45);">
+            <p>Toys for Young Teens</p>
+            <!-- <a href="#" class="button1" ;>See More</a> -->
+
+        </div>
+    </div>
+
+
+
+
+
+    <div id="txt"></div>
+    <!-- <div id="new"></div>
+    <div id="basic"></div> -->
+
+    <script>
+
+        let img = ["https://t3.ftcdn.net/jpg/08/15/93/64/360_F_815936495_ZRwqFbpAK6hynGEKAsRy2x1vgFnEP8v4.jpg", "https://img.freepik.com/free-vector/toy-store-cartoon-landing-page-shop-showcase_107791-14657.jpg", "https://img.freepik.com/free-vector/toys-shop-white-background_1308-17615.jpg?size=626&ext=jpg&ga=GA1.1.44546679.1716681600&semt=ais_user", "https://media.istockphoto.com/id/1327513606/vector/robot-cars-pyramid-helicopter-rocket-blocks-in-boy-toy-store-window-colourful-storefront.jpg?s=612x612&w=0&k=20&c=IzxRqyo0S7oBSNT3vOfZrmNoFqs04CXOFSGth1H1UJs="];
+
+        const bg = document.getElementById('bg-img');
+        const textelement = document.getElementById('text');
+
+        let i = 0;
+        let j = 0;
+        let images = document.getElementsByClassName('img')
+        function next() {
+
+            images[j].classList.remove('display');
+            j++;
+            if (j == img.length) {
+                j = 0;
+            }
+            images[j].classList.add('display');
+
+            i++;
+            if (i == img.length) {
+                i = 0;
+            }
+
+            bg.style.backgroundImage = 'url("' + img[i] + '")';
+        }
+        function prev() {
+            images[j].classList.remove('display');
+            j--;
+            if (j == -1) {
+
+                j = img.length - 1;
+
+            }
+            images[j].classList.add('display');
+
+
+            i--;
+            if (i == -1) {
+                i = img.length - 1;
+            }
+
+            bg.style.backgroundImage = 'url("' + img[i] + '")';
+
+        }
+
+
+
+        let val = document.getElementById('txt');
+        let obj = [
+            {
+                id: 1,
+                name: "CAR",
+                price: 273,
+                description: "Storio 3D Baby Car Toy with 360 Degree Rotation, Gear Simulation Mechanical Car with Sound Music",
+                Image: "https://m.media-amazon.com/images/I/71F0EW3-gBL._AC_UL480_FMwebp_QL65_.jpg"
+            },
+            {
+                id: 2,
+                name: "SCOOTER",
+                price: 1500,
+                description: "Lifelong Kick Scooter with Adjustable Height | Foldable Scooter | Skate Scooter for Kids with PVC Wheel | Max",
+                Image: "https://m.media-amazon.com/images/I/61xr-fzqcxL._AC_UL480_FMwebp_QL65_.jpg"
+            },
+            {
+                id: 3,
+                name: "GAME",
+                price: 799,
+                description: "Tantrums Wooden Colourful Spelling Toy Game with Flash Cards| Fun Learning Educational Toy| A Spelling",
+                Image: "https://m.media-amazon.com/images/I/71vUVDEmCxL._AC_UL480_FMwebp_QL65_.jpg"
+            },
+            {
+                id: 4,
+                name: "BABIQU",
+                price: 299,
+                description: "Babique Elephant Sitting Plush Soft Toy Cute Kids Animal Home Decor Boys/Girls (Blue, 30 cm)",
+                Image: "https://m.media-amazon.com/images/I/71sh-Yt3EmL._AC_UL480_QL65_.jpg"
+            },
+            {
+                id: 5,
+                name: "TRUCK",
+                price: 399,
+                description: "Toy Imagine� 4x4 Mini Monster Friction Power Truck Pack of 2 Kids Age 3-8 | 360� Drift Stunt Car | Push ",
+                Image: "https://m.media-amazon.com/images/I/41r3UQtYUFL._AC_UL480_QL65_.jpg"
+            },
+            {
+                id: 6,
+                name: "TOYS",
+                price: 599,
+                description: "Niwlix Wooden Learning Educational Board for Kids, Puzzle Toys for 2 Years Old Boys & Girls",
+                Image: "https://m.media-amazon.com/images/I/71+j5hyEKaL._AC_UL480_QL65_.jpg"
+            },
+            {
+                id: 7,
+                name: "BLOCKS",
+                price: 549,
+                description: "Humming Bird Building Blocks Toys for Kids Educatinal and Learning Puzzle Games for Kids Girls & Boys ",
+                Image: "https://m.media-amazon.com/images/I/618srDutK+L._AC_UL480_QL65_.jpg"
+            },
+            {
+                id: 8,
+                name: "SHAPE SORTER",
+                price: 550,
+                description: "Intellibaby Premium Shape Sorter Cube for Babies | Learning & Educational Toy for Baby Boys/Girls | Sorting &",
+                Image: "https://m.media-amazon.com/images/I/61rmPji0plL._AC_UL480_QL65_.jpg"
+            },
+            {
+                id: 9,
+                name: "CUBE",
+                price: 99,
+                description: "Storio Cubes 3X3 High Speed Sticker Less Magic Puzzle Cube Game Toy 1,Multicolor",
+                Image: "https://m.media-amazon.com/images/I/61fB-s4DPVS._AC_UL480_QL65_.jpg"
+            },
+            {
+                id: 10,
+                name: "SLIME",
+                price: 199,
+                description: "HOTKEI (Pack of 6 Slime) Multicolor Fruit Scented DIY Toy Slime Gel Jelly Putty Set Art kit Toys for Boys Girls",
+                Image: "https://m.media-amazon.com/images/I/81FCvGp-SQL._AC_UL480_FMwebp_QL65_.jpg"
+            },
+            {
+                id: 11,
+                name: "SCIENCE KIT",
+                price: 699,
+                description: "Einstein Box Ultimate Science Kit for Boys and Girls Ages 6-8-12-14| Birthday Gifts Ideas for Kids| STEM",
+                Image: "https://m.media-amazon.com/images/I/71flpMokoIL._AC_UL480_FMwebp_QL65_.jpg"
+            },
+            {
+                id: 12,
+                name: "CHESS BOARD",
+                price: 1039,
+                description: "PALM ROYAL HANDICRAFTS Wooden Handmade Foldable Magnetic Chess Board Set Wooden with Magnetic",
+                Image: "https://m.media-amazon.com/images/I/713VIXrpSOL._AC_UL480_FMwebp_QL65_.jpg"
+            }
+        ];
+        for (val of obj) {
+            txt.innerHTML += `
+        <div class="box">
+        <img src="${val.Image}" height="250px" alt="music">
+                <p>${val.name}</p>
+                 <p>${val.price}</p>
+                 <p>${val.description}</p>
+        <button onclick=data(${val.id})>ADD CART</button>
+        </div>
+        `
+
+        }
+        let arr = [];
+        if (localStorage.length > 0) {
+            arr = JSON.parse(localStorage.getItem('Product Id'))
+        }
+        let data = (id) => {
+            arr.push(obj[id - 1])
+            console.log(arr);
+            localStorage.setItem("Product Id", JSON.stringify(arr));
+        }
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+        //  let data=(id)=>{
+        //     console.log(obj[id-1]);
+        //  }
+
+
+    </script>
+    <footer>
+        <p>&copy; 2024 Toys Store</p>
+    </footer>
+</body>
+
+</html>

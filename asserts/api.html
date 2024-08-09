@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color:darkseagreen;
+    }
+    #container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px
+        }
+        header{
+            background: linear-gradient(rgb(10, 65, 23), white, rgb(10, 65, 23));
+            color: black;
+            padding: 10px;
+            text-align: center;
+            height: 70px;
+        }
+        footer{
+            background: linear-gradient(rgb(10, 65, 23), white, rgb(10, 65, 23));
+            color: black;
+            padding: 10px;
+            text-align: center;
+            height: 50px;
+        }
+
+</style>
+<body>
+    <header>
+        <h1>FASHION FORWARD</h1>
+    </header>
+    <div id="container">
+
+    </div>
+    <script>
+      fetch('https://fakestoreapi.com/products/')
+      //converting json to js obj
+      .then((data)=> data.json())
+      //print 
+      .then((data)=>{
+        let con  = document.getElementById('container');
+        for(src of data)
+      {
+        con.innerHTML+=`
+        <img src="${src.image}" height="100px" alt="loading">
+        `
+      }
+      })
+  
+    </script>
+    <footer>
+        <p>&copy; 2024 FASHION FORWARD</p>
+    </footer>
+</body>
+</html>

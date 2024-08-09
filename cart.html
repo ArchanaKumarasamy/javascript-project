@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+    }
+    header, footer {
+          background: linear-gradient(purple,white,purple);
+            color:black;
+            padding : 10px;
+            text-align: center;
+        }
+</style>
+<body>
+    <header>
+        <h1>"TOYS STORE"</h1>
+    </header>
+    <div id="container">
+
+    </div>
+    <script>
+        let data=JSON.parse(localStorage.getItem("Product Id"));
+        let pro=document.getElementById('container');
+        for(val of data){
+            pro.innerHTML+=`
+            <div class="box">
+        <img src="${val.Image}" height="250px" alt="toys">
+                <p>${val.name}</p>
+                 <p>${val.price}</p>
+                 <p>${val.description}</p>
+        <button onclick=data(${val.id})>shop now</button>
+        </div>
+            `
+        }
+        
+    </script>
+    <footer>
+        <p>&copy; 2024 Toys Store</p>
+    </footer>
+</body>
+</html>
